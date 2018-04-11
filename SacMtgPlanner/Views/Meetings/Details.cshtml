@@ -1,0 +1,51 @@
+﻿@model SacMtgPlanner.Models.Meeting
+
+@{
+    ViewData["Title"] = "Program Preview";
+}
+
+<h2 style="margin-left: -10px;">Program Preview</h2>
+
+<div class="row" style="border: 1px #333 solid; padding: 10px;">
+    <div style="text-align: center;" class="col-md-6">
+        <p style="margin-bottom: 5px;">@Html.DisplayFor(model => model.ReleaseDate)</p>
+        <h2 style="margin-top: 0px;">@Html.DisplayFor(model => model.Subject)</h2>
+        <img src="~/images/jesus-at-the-door.jpg" alt="Jesus knocking on the door" width="300px" height="auto" />
+        <p style="margin-top: 20px;"><em>"Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me."</em></p>
+    </div>
+    <div class="col-md-6">
+        <h3 style="text-align:center;">Cooper 2<sup>nd</sup> Ward</h3>
+        <div>
+            <p><b>Presiding</b><span style="float: right;">Bishop Speaker</span>
+            <p><b>Conducting</b><span style="float: right;">@Html.DisplayFor(model => model.Conducting)</span></p>
+            <p><b>Pianist</b><span style="float: right;">Laron Swapp</span></p>
+            <p><b>Chorister</b><span style="float: right;">Patsy Baker</span></p>
+            <p><b>Opening Hymn</b><span style="float: right;">@Html.DisplayFor(model => model.OpenHymn)</span></p>
+            <hr />
+        </div>
+        <div>
+            <p><b>Invocation</b><span style="float: right;">@Html.DisplayFor(model => model.OpenPrayer)</span></p>
+            <p><b>Sacrament Hynm</b><span style="float: right;">@Html.DisplayFor(model => model.SacHymn)</span></p>
+            <p style="text-align:center;"><b><em>Sacrament Administered by the Priesthood</em></b></p>
+            <hr />
+        </div>
+        <div>
+            <p><b>Youth Speaker</b><span style="float: right;">@Html.DisplayFor(model => model.YouthSpeaker)</span></p>
+            <p><b>Speaker</b><span style="float: right;">@Html.DisplayFor(model => model.FirstSpeaker)</span></p>
+            <p><b>Speaker</b><span style="float: right;">@Html.DisplayFor(model => model.SecondSpeaker)</span></p>
+            <p><b>Closing Remarks</b><span style="float: right;">@Html.DisplayFor(model => model.Conducting)</span></p>
+            <hr />
+        </div>
+        <div>
+            <p><b>Closing Hynm</b><span style="float: right;">@Html.DisplayFor(model => model.CloseHymn)</span></p>
+            <p><b>Benediction</b><span style="float: right;">@Html.DisplayFor(model => model.ClosePrayer)</span></p>
+            <hr />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
